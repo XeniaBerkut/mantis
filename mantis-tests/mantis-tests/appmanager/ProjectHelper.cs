@@ -78,7 +78,7 @@ namespace mantis_tests
         {
             driver.FindElement(By.XPath("//input[@value='Удалить проект']")).Click();
 
-            if (manager.Navigator.MyPage("mantisbt-2.12.0/manage_proj_delete.php"))
+            if (manager.Navigator.MyPage("manage_proj_delete.php"))
             {
                 driver.FindElement(By.XPath("//input[@value='Удалить проект']")).Click();
             }        

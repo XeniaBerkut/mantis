@@ -14,6 +14,7 @@ namespace mantis_tests
         public bool GlobalCategory { get; set; }
         public string Enable { get; set; }
         public string Description { get; set; }
+        public string Id { get; set; }
 
         public bool Equals(ProjectData other)
         {

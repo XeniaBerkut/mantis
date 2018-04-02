@@ -36,8 +36,6 @@ namespace mantis_tests
             oldList.Sort();
             newList.Sort();
             Assert.AreEqual(oldList, newList);
-
-        }
-        
+        }        
     }
 }

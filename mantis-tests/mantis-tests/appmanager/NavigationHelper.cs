@@ -56,12 +56,12 @@ namespace mantis_tests
 
         public void GoToLoginPage()
         {
-             if (driver.Url == baseURL + "mantisbt-2.12.0/login_page.php")
+             if (driver.Url == baseURL + "login_page.php")
                 {
                     return;
                 }
 
-            driver.Navigate().GoToUrl(baseURL + "addressbook/");
+            driver.Navigate().GoToUrl(baseURL + "login_page.php");
         }
     }
 }

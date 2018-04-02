@@ -27,7 +27,5 @@ namespace mantis_tests
             app.Auth.Login(account);            
             app.Auth.Logout();
         }
-
-
     }
 }
