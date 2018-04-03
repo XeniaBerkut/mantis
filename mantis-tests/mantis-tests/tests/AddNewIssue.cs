@@ -13,12 +13,6 @@ namespace mantis_tests
         [Test]
         public void AddNewIssueTest()
         {
-            AccountData account = new AccountData()
-            {
-                Name = "administrator",
-                Password = "23102310"
-            };
-
             ProjectData project = new ProjectData()
             {
                 Name = "Test"
@@ -30,7 +24,9 @@ namespace mantis_tests
                 Description = "some long text",
                 Category = "General"
             };
-            app.API.CreateNewIssue(account, project, issueData);
+
+            List<ProjectData> list = app.API.GetProjects();
+            app.API.CreateNewIssue(project, issueData);
         }
     }
 }

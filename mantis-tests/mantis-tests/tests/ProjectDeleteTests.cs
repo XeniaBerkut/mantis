@@ -14,15 +14,22 @@ namespace mantis_tests
         {
             ProjectData project = new ProjectData()
             {
-                Name = "dfdf"
+                Name = "MantisTest"
             };
-            
-            if (!app.Project.Exists(project.Name)) { app.Project.Create(project); }
-            List<ProjectData> oldList = app.Project.GetProjectList();
 
+            //if (!app.Project.Exists(project.Name)) { app.Project.Create(project); }
+            if (!app.Project.Exists(project.Name))
+            {
+                app.API.CreateProject(project);
+                app.Navigator.RefreshPage();
+            }
+
+            //List<ProjectData> oldList = app.Project.GetProjectList();
+            List<ProjectData> oldList = app.API.GetProjects();
             app.Project.Delete(project);
 
-            List<ProjectData> newList = app.Project.GetProjectList();
+            //List<ProjectData> newList = app.Project.GetProjectList();
+            List<ProjectData> newList = app.API.GetProjects();
             oldList.Remove(project);
             Assert.AreEqual(oldList, newList);
 

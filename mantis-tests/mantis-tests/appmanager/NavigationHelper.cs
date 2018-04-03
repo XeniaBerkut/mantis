@@ -42,6 +42,12 @@ namespace mantis_tests
             
         }
 
+        public void RefreshPage()
+        {
+            string refresh = driver.Url;
+            driver.Navigate().GoToUrl(refresh);
+        }
+
         public bool MyPage(string path)
         {
             if (driver.Url == baseURL + path)
